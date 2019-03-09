@@ -33,6 +33,7 @@ ORDER_NO_STR = "Quantity"
 ORDER_GRADE_STR = "Grade"
 BREED_ERR_1 = "USAGE: breed <sheep name 1> <sheep name 2>"
 BREED_ERR_2 = "You don't have a sheep by the name of {}."
+NMS_ERR = "Don't masturbate the sheep, you sheepfucker."
 BREED_SUCCESS = "You successfully bred {} and {} to produce {}!"
 ADD_SHEEP_ERR = "You can't handle another sheep! Sell some first."
 SELL_ERR = "USAGE: sell <sheep name>"
@@ -154,6 +155,9 @@ class Game():
         sheepb = cmd_list[2]
         if sheepb not in self.sheep:
             print(BREED_ERR_2.format(sheepb))
+            return
+        if sheepa == sheepb :
+            print(NMS_ERR)
             return
         ## add a new sheep to the fold
         name = self.addSheep([self.sheep[sheepa]
