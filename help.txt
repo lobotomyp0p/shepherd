@@ -1,0 +1,8 @@
+Press "tab" to see the available actions.
+
+Breed  : Breed two sheep to make a new sheep.
+Buy    : Buy a sheep.
+Fold   : Review your sheep.
+Sell   : Sell a sheep.
+Ship   : Ship your order.
+Ticket : Review your order.
