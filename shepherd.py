@@ -219,19 +219,19 @@ class Game():
         ## grade the shipment
         ## the ideal shipment is composed of evenly graded sheep
         grades = [self.sheep[s] for s in sheepment]
-        print("GRADES: {}".format(grades))
+        #print("GRADES: {}".format(grades))
         grades.sort()
-        print("SORTED GRADES: {}".format(grades))
+        #print("SORTED GRADES: {}".format(grades))
         ideal_grades = np.linspace(min(self.order[ORDER_GRADE_STR])
                                 , max(self.order[ORDER_GRADE_STR])
                                 , self.order[ORDER_NO_STR])
-        print("IDEAL GRADES: {}".format(ideal_grades))
+        #print("IDEAL GRADES: {}".format(ideal_grades))
         difference = sum((grades-ideal_grades)**2/ideal_grades)
-        print("DIFFERENCE: {}".format(difference))
+        #print("DIFFERENCE: {}".format(difference))
         bonus = 100 * len(sheepment) - int(difference * 100)
         if bonus < 0:
             bonus = 0
-        print("BONUS: {}".format(bonus))
+        #print("BONUS: {}".format(bonus))
         ## calculate price
         base_price = SHEEP_SALE * len(sheepment)
         if min(grades) < min(self.order[ORDER_GRADE_STR]) or max(grades) > max(self.order[ORDER_GRADE_STR]):
